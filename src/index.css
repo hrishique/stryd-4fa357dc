@@ -2,41 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* STRYD Design System - Energetic Web3 Fitness Theme */
 
 @layer base {
   :root {
+    /* Core Background & Text */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 225 100% 12%;
 
+    /* Card & Surface Colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 225 100% 12%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 225 100% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* STRYD Brand Colors - Energetic Fitness Theme */
+    --primary: 51 100% 50%; /* Vibrant Yellow #FFD700 */
+    --primary-foreground: 225 100% 12%;
+    --primary-glow: 51 100% 65%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 267 100% 41%; /* Bright Purple #9B30FF */
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 267 100% 55%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Supporting Colors */
+    --accent: 225 100% 12%; /* Dark Blue #1A1A40 */
+    --accent-foreground: 0 0% 100%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 0 0% 96%; /* Light Grey #F5F5F5 */
+    --muted-foreground: 225 15% 45%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Functional Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --warning: 48 96% 53%;
+    --warning-foreground: 225 100% 12%;
+
+    /* UI Elements */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 51 100% 50%;
+
+    /* STRYD Custom Design Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(51 100% 50%), hsl(48 100% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(267 100% 41%), hsl(280 100% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(267 100% 41%) 0%, hsl(51 100% 50%) 100%);
+    
+    --glow-primary: 0 0 20px hsl(51 100% 50% / 0.3);
+    --glow-secondary: 0 0 20px hsl(267 100% 41% / 0.3);
+    --glow-hover: 0 0 30px hsl(51 100% 50% / 0.5);
+
+    --shadow-soft: 0 4px 20px hsl(225 100% 12% / 0.1);
+    --shadow-card: 0 8px 30px hsl(225 100% 12% / 0.12);
+    --shadow-glow: 0 0 40px hsl(51 100% 50% / 0.2);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +84,60 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Core Background & Text - Dark Theme */
+    --background: 225 100% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Card & Surface Colors - Dark Theme */
+    --card: 225 80% 12%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 225 80% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* STRYD Brand Colors - Dark Theme */
+    --primary: 51 100% 55%; /* Slightly brighter yellow for dark mode */
+    --primary-foreground: 225 100% 8%;
+    --primary-glow: 51 100% 70%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 267 100% 50%; /* Brighter purple for dark mode */
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 267 100% 65%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Supporting Colors - Dark Theme */
+    --accent: 225 60% 20%;
+    --accent-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 225 30% 15%;
+    --muted-foreground: 225 10% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Functional Colors - Dark Theme */
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --warning: 48 96% 60%;
+    --warning-foreground: 225 100% 8%;
+
+    /* UI Elements - Dark Theme */
+    --border: 225 30% 18%;
+    --input: 225 30% 18%;
+    --ring: 51 100% 55%;
+
+    /* STRYD Custom Design Tokens - Dark Theme */
+    --gradient-primary: linear-gradient(135deg, hsl(51 100% 55%), hsl(48 100% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(267 100% 50%), hsl(280 100% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(267 100% 50%) 0%, hsl(51 100% 55%) 100%);
+    
+    --glow-primary: 0 0 25px hsl(51 100% 55% / 0.4);
+    --glow-secondary: 0 0 25px hsl(267 100% 50% / 0.4);
+    --glow-hover: 0 0 35px hsl(51 100% 55% / 0.6);
+
+    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 8px 30px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(51 100% 55% / 0.3);
   }
 }
 
@@ -100,6 +147,111 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer components {
+  /* STRYD Button Variants */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground 
+           rounded-2xl px-6 py-3 font-bold text-lg
+           shadow-[var(--glow-primary)] hover:shadow-[var(--glow-hover)]
+           transition-[var(--transition-smooth)] hover:scale-105
+           border-0 outline-none focus:ring-2 focus:ring-primary/50;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary to-secondary-glow text-secondary-foreground 
+           rounded-2xl px-6 py-3 font-bold text-lg
+           shadow-[var(--glow-secondary)] hover:shadow-[var(--glow-hover)]
+           transition-[var(--transition-smooth)] hover:scale-105
+           border-0 outline-none focus:ring-2 focus:ring-secondary/50;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary bg-transparent 
+           rounded-2xl px-6 py-3 font-bold text-lg
+           hover:bg-primary hover:text-primary-foreground
+           transition-[var(--transition-smooth)] hover:scale-105
+           hover:shadow-[var(--glow-primary)];
+  }
+
+  /* STRYD Card Styles */
+  .card-primary {
+    @apply bg-card border border-border rounded-2xl p-6
+           shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-glow)]
+           transition-[var(--transition-smooth)] hover:scale-[1.02];
+  }
+
+  .card-challenge {
+    @apply bg-gradient-to-br from-card to-muted/50 
+           border border-border rounded-2xl p-6
+           shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-glow)]
+           transition-[var(--transition-bounce)] hover:scale-[1.02]
+           relative overflow-hidden;
+  }
+
+  .card-challenge::before {
+    @apply absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0
+           transition-opacity duration-300;
+    content: "";
+  }
+
+  .card-challenge:hover::before {
+    @apply opacity-100;
+  }
+
+  /* STRYD Progress Bars */
+  .progress-primary {
+    @apply h-3 bg-muted rounded-full overflow-hidden relative;
+  }
+
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-primary to-primary-glow
+           rounded-full transition-all duration-1000 ease-out
+           shadow-[var(--glow-primary)];
+  }
+
+  /* STRYD Text Styles */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-bold;
+  }
+
+  .text-hero {
+    @apply text-5xl md:text-7xl font-black leading-tight;
+  }
+
+  .text-section {
+    @apply text-3xl md:text-4xl font-bold mb-6;
+  }
+
+  /* STRYD Animations */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: var(--glow-primary); }
+    50% { box-shadow: var(--glow-hover); }
+  }
+
+  /* STRYD Layout Utilities */
+  .container-stryd {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
   }
 }
