@@ -10,9 +10,8 @@ export const StravaConnect = () => {
   const [stravaUser, setStravaUser] = useState("");
 
   const connectStrava = async () => {
-    // Mock Strava connection
-    setIsConnected(true);
-    setStravaUser("athlete_123");
+    // Redirect to Strava OAuth authorize
+    window.location.href = "https://www.strava.com/oauth/authorize";
   };
 
   const disconnectStrava = () => {
